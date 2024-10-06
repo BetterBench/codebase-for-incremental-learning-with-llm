@@ -17,6 +17,7 @@ This is a repository for Incremental Learning with Large Language Models.
 
 <!-- Please refer to [this repository](https://github.com/zzz47zzz/pretrained-lm-for-incremental-learning-survey) for survey, resource, and paper in this area. -->
 
+
 ## Supported List
 
 ### Scenario
@@ -88,22 +89,24 @@ More baselines will be released in the future!
 #### Instance Incremental Learning
 - [x] Concept-1K (The raw and the preprocessed Concept-1K are included in *dataset/concept_1k*, *dataset/concept_1k_task10*, *dataset/concept_1k_task1*).
 
-#### Intent Classification
-- [x] Topic3datasets (agnews, dbpedia, yahoo)
+- [ ] 
 
 #### Intent Classification
-- [x] CLINC150
-- [x] Banking77
+- [x] Topic3datasets (agnews, dbpedia, yahoo),包含三个数据集：agnews, dbpedia, yahoo。用于意图分类（Intent Classification）任务，每个数据集都包含了不同来源的新闻文章，用于分类到不同的主题或类别。
+
+#### Intent Classification
+- [x] CLINC150：一个客户服务领域的问答数据集，包含150个不同的问题类别。用于意图分类任务，帮助机器理解客户查询的意图。
+- [x] Banking77：一个银行业务领域的问答数据集，包含77个不同的问题类别。用于意图分类，旨在帮助模型识别和分类银行业务相关的查询。
 
 
 #### Relation Extraction
-- [x] FewRel
-- [x] TACRED
+- [x] FewRel：一个低资源的关系抽取数据集，包含少量的标注数据。1. - 用于关系抽取（Relational Extraction）任务，即识别文本中实体之间的关系。
+- [x] TACRED：用于关系抽取的数据集，包含从维基百科提取的实体和关系。这个数据集比FewRel更大，提供了更多的训练样本。
 
 #### Named Entity Recognition
-- [x] Few-NERD
-- [x] Ontonotes5
-- [x] I2B2
+- [x] Few-NERD：一个低资源的命名实体识别（Named Entity Recognition, NER）数据集。用于训练和评估模型在识别文本中的实体（如人名、地点、组织等）的能力。
+- [x] Ontonotes5：多领域数据集，包含大量的文本和丰富的实体标注。用于命名实体识别任务，涵盖了广泛的实体类型，如人、地点、组织等。
+- [x] I2B2：一个医疗领域的命名实体识别数据集，包含临床笔记中的实体。用于医疗信息抽取，帮助模型识别医疗记录中的相关实体。
 
 
 ## Usage
@@ -183,11 +186,15 @@ For example, the hyper-parameter of SEQ* (w/ and w/o pre-allocating future class
 
 #### Step 4: reproduce the results
 
-The scripts for reproducing the probing study are in the folder *reproduce_shell/exp-probing*. 
+1. **reproduce_shell/exp-probing**：
+   这个文件夹包含了用于复现探测研究（probing study）的脚本。探测研究通常用于评估模型在特定任务上的性能，例如评估模型对特定语言现象的敏感性或者模型在特定任务上的泛化能力。
 
-The scripts for reproducing the probing study with different pre-training steps are in the folder *reproduce_shell/exp-probing-pretraining*. 
+2. **reproduce_shell/exp-probing-pretraining**：
+   这个文件夹包含了用于复现不同预训练步骤下的探测研究的脚本。预训练步骤可能指的是在预训练模型时使用的不同数据量或者预训练的不同阶段。这些脚本可以帮助研究者理解预训练步骤对模型性能的影响。
 
-The scripts for reproducing the experiments of comparing SEQ* with SOTA methods are in the folder *reproduce_shell/exp-sota*. 
+3. **reproduce_shell/exp-sota**：
+   这个文件夹包含了用于复现与最新技术水平（State Of The Art, SOTA）方法比较的实验的脚本。这些脚本用于展示该代码库中的方法与当前领域内最佳方法的性能对比，以证明其有效性和竞争力。
+
 
 If you want to run an experiment, execute the main_CL.py.
 For example, you can run SEQ method on clinc150_task15 dataset with bert-base-cased using the following command:
