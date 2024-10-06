@@ -36,8 +36,8 @@ This is a repository for Incremental Learning with Large Language Models.
 More baselines will be released in the future!
 
 #### General (Text/Intent) Classification
-- [x] SEQ
-- [x] [ExperienceReplay](https://arxiv.org/abs/1902.10486)
+- [x] [SEQ](https://arxiv.org/pdf/2312.07887)
+- [x] [ExperienceReplay](https://arxiv.org/abs/1902.10486)    
 - [x] [PEFT (including, LoRA, PromptTuning)](https://huggingface.co/docs/peft/index)
 - [x] [LAMOL (ICLR 2020)](https://openreview.net/forum?id=Skgxcn4YDS)
 - [x] [LAMOL_KD (arXiv)](https://arxiv.org/abs/2312.07887)
